@@ -1,2 +1,2 @@
 # electricPowerItaly_timeSeries
-A university project for the times series analysis class.
+A university project for the time series analysis class.
