@@ -11,8 +11,8 @@ for i=1:7
     ylabel("AIC");
     xlabel("q");
     hold on
-    
 end
+hold off
 legend("p=0","p=1","p=2","p=3","p=4","p=5","p=6")
 end
 
