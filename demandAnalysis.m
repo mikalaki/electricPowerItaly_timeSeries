@@ -1,4 +1,5 @@
-%% Ergasia Xronoseirwn : Zisou Charilaos AEM 9213 ,Karatzas Michalis AEM 9137
+%% Ergasia Xronoseirwn : Zisou Charilaos AEM 9213, Karatzas Michalis AEM 9137
+%% Linear Analysis
 close all; clear; clc;
 
 % import data
@@ -23,45 +24,35 @@ load('demandData.mat');
 
 %constants
 per = 7;
-maorder = 7;
 maxtau = 100;
 Tmax = 10;  
 p=4;
 q=1;
 alpha = 0.05;
 zalpha = norminv(1-alpha/2);
-n = length(demand);
+n = length(demand)-1;
 
 % plot unprocessed time series
 figure(1)
 clf
 plot(demand)
-%splot(demand,'-o')
 hold on
 xlabel('t')
 ylabel('y(t)')
 title('Unprocessed demand time series')
 
 %% LINEAR 1
-% % detrend time series
-% maDemand = movingaveragesmooth2(demand, maorder);
-% detrended = demand - maDemand;
-% figure(2)
-% plot(detrended)
-% title(['Detrended demand time series by MA(', num2str(maorder), ') smoothing'])
-
-% 1a.detrend time series First Differences
+% % Detrend time series by first order differences
 detrended=zeros(364,1);
 for i=1:364
     detrended(i)=demand(i+1)-demand(i);
 end
 figure(2)
 plot(detrended)
-title(['Detrended demand time series by first differencies'])
+title('Detrended demand time series by first differencies')
 
 % deseason time series
 deseasonedc = seasonalcomponents(detrended, per);
-%deseasonedma = movingaverageseasonal(detrended, per);
 deseasoned =  detrended - deseasonedc;
 figure(3)
 plot(deseasoned)
@@ -84,15 +75,11 @@ plot([0 maxtau+1],-autlim*[1 1],'--c','linewidth',1.5)
 xlabel('\tau')
 ylabel('r(\tau)')
 title('Autocorrelation')
+hold off
 
-% Ljung-Box Portmanteau Test
-figure(6)
-tittxt = ('Deseasoned time series');
-[h2V,p2V,Q2V] = portmanteauLB(ac1(2:maxtau+1,2),n,alpha,tittxt);
-
-% Partial autocorrelation
+% Partial autocorrelation of deseasoned time series
 pac1 = parautocor(deseasoned, maxtau);
-figure(7)
+figure(6)
 clf
 hold on
 for ii=1:maxtau
@@ -103,69 +90,44 @@ plot([0 maxtau+1],autlim*[1 1],'--c','linewidth',1.5)
 plot([0 maxtau+1],-autlim*[1 1],'--c','linewidth',1.5)
 xlabel('\tau')
 ylabel('\phi_{\tau,\tau}')
-title('Partial autocorrelation of deseasoned demand')
+title('Partial autocorrelation of demand time series')
+hold off
+
+% Ljung-Box Portmanteau Test
+figure(7)
+tittxt = ('Deseasoned time series');
+[h2V,p2V,Q2V] = portmanteauLB(ac1(2:maxtau+1,2),n,alpha,tittxt);
+
 
 %% LINEAR 3
-% %AIC criterion for different models( model with minimun AIC criterion is
-% %the bestfit.
-% akaike(deseasoned,Tmax);
+
+% AIC
+%aicMatrix = akaike(deseasoned, Tmax);
+% BEST FIT IS ARMA(6,0)
+p=6;
+q=0;
 
 % Fit ARMA Model
-%[nrmseV,phiallV,thetaallV,SDz,aicS,fpeS]=fitARMA(deseasoned, p, q, Tmax);
-%aicS = akaike(deseasoned, Tmax);
-%results are p=6,q=0
+[nrmseARMA,~,~,~,~,~,armamodel]=fitARMA(deseasoned, p, q, Tmax);
 
-%ARMA model parameters.
-p=6
-%p=3
-q=0
-
-%fitting the model
-[nrmseV,phiV,thetaV,SDz,~,~,armamodel]=fitARMA(deseasoned, p, q, Tmax);
-% 
-%plotting the NRMSE for Tmax steps forward
-hold off;
-plot(nrmseV);
-title(sprintf('NRMSE of ARMA(%d,%d) fit in demand time series, autocorrelation',p,q));
-
-xlabel("steps forward");
-ylabel("value");
+figure(9)
+plot(nrmseARMA,'-o')
+ylabel("NRMSE");
+xlabel("T");
+title('Demand: NRMSE of ARMA(3,3) for T=1,2...10')
 
 %% LINEAR 4
-% %predictions=[];
-% indexes=[];
-% nrmse=[];
-% step=30;
-% for n1 = 20:step:n %6 different points in total
-%    indexes=[indexes n1];
-%    
-%    [nrmseV,~,~,~] = predictARMAnrmse(deseasoned,5,0,1,n-n1,[]);
-%    nrmse=[nrmse nrmseV];
-%    
-%    %[predictions] =[predictions predictARMAmultistep(deseasoned,n1,5,0,1,[])];
-%    %[preV] = predictARMAmultistep(xV,n1,p,q,Tmax,'example');
-% end
-% 
-% figure()
-% 
-% % plot(indexes,predictions,"-o");
-% % hold on;
-% plot(indexes,nrmse,"-o");
-% title("NRMSE for one step forward prediction with AR(5) model");
-% xlabel("Size of learning test");
-% legend("NRMSE");
-
 index=1;
 nrmseAR5 = zeros(5,1);
 for i=70:5:90
     [nrmseAR5(index),~,~,~] = predictARMAnrmse(deseasoned, 5, 0, 1, round(0.01*(100-i)*n), '');
     index=index+1;
 end
-figure(8)
+figure(10)
 plot((0.7:0.05:0.9).',nrmseAR5,'-o')
-title('NRMSE for one step forward demand prediction with AR(5) model')
-ylabel('NRMSE value')
-xlabel('Percentage of time series used as training set ')
+ylabel("NRMSE");
+xlabel("Percent of training data");
+title('Demand: NRMSE of AR(5) using 70%, 75%, 80%, 85%, 90% of training data')
 
 
 
