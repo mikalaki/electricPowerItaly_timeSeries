@@ -113,6 +113,7 @@ title('Partial autocorrelation of deseasoned demand')
 % Fit ARMA Model
 %[nrmseV,phiallV,thetaallV,SDz,aicS,fpeS]=fitARMA(deseasoned, p, q, Tmax);
 %aicS = akaike(deseasoned, Tmax);
+%results are p=6,q=0
 
 %ARMA model parameters.
 p=6
@@ -131,29 +132,40 @@ xlabel("steps forward");
 ylabel("value");
 
 %% LINEAR 4
-%predictions=[];
-indexes=[];
-nrmse=[];
-step=30;
-for n1 = 20:step:n %6 different points in total
-   indexes=[indexes n1];
-   
-   [nrmseV,~,~,~] = predictARMAnrmse(deseasoned,5,0,1,n-n1,[]);
-   nrmse=[nrmse nrmseV];
-   
-   %[predictions] =[predictions predictARMAmultistep(deseasoned,n1,5,0,1,[])];
-   %[preV] = predictARMAmultistep(xV,n1,p,q,Tmax,'example');
+% %predictions=[];
+% indexes=[];
+% nrmse=[];
+% step=30;
+% for n1 = 20:step:n %6 different points in total
+%    indexes=[indexes n1];
+%    
+%    [nrmseV,~,~,~] = predictARMAnrmse(deseasoned,5,0,1,n-n1,[]);
+%    nrmse=[nrmse nrmseV];
+%    
+%    %[predictions] =[predictions predictARMAmultistep(deseasoned,n1,5,0,1,[])];
+%    %[preV] = predictARMAmultistep(xV,n1,p,q,Tmax,'example');
+% end
+% 
+% figure()
+% 
+% % plot(indexes,predictions,"-o");
+% % hold on;
+% plot(indexes,nrmse,"-o");
+% title("NRMSE for one step forward prediction with AR(5) model");
+% xlabel("Size of learning test");
+% legend("NRMSE");
+
+index=1;
+nrmseAR5 = zeros(5,1);
+for i=70:5:90
+    [nrmseAR5(index),~,~,~] = predictARMAnrmse(deseasoned, 5, 0, 1, round(0.01*(100-i)*n), '');
+    index=index+1;
 end
-
-figure()
-
-% plot(indexes,predictions,"-o");
-% hold on;
-plot(indexes,nrmse,"-o");
-title("NRMSE for one step forward prediction with AR(5) model");
-xlabel("Size of learning test");
-legend("NRMSE");
-
+figure(8)
+plot((0.7:0.05:0.9).',nrmseAR5,'-o')
+title('NRMSE for one step forward demand prediction with AR(5) model')
+ylabel('NRMSE value')
+xlabel('Percentage of time series used as training set ')
 
 
 

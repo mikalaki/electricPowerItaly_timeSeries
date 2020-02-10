@@ -128,7 +128,7 @@ fprintf('AIC: %f \n',aicS);
 fprintf('FPE: %f \n',fpeS);
 
 %plotting the NRMSE for Tmax steps forward
-figure();
+figure(8);
 plot(nrmseV,"-o");
 title("NRMSE");
 xlabel("steps forward");
@@ -136,27 +136,118 @@ ylabel("value");
 
 
 %% LINEAR 4
-%predictions=[];
-indexes=[];
-nrmse=[];
-step=30;
-for n1 = 20:step:n %6 different points in total
-   indexes=[indexes n1];
-   
-   [nrmseV,~,~,~] = predictARMAnrmse(deseasoned,5,0,1,n-n1,[]);
-   nrmse=[nrmse nrmseV];
-   
-   %[predictions] =[predictions predictARMAmultistep(deseasoned,n1,5,0,1,[])];
-   %[preV] = predictARMAmultistep(xV,n1,p,q,Tmax,'example');
+% %predictions=[];
+% indexes=[];
+% nrmse=[];
+% step=30;
+% for n1 = 20:step:n %6 different points in total
+%    indexes=[indexes n1];
+%    
+%    [nrmseV,~,~,~] = predictARMAnrmse(deseasoned,5,0,1,n-n1,[]);
+%    nrmse=[nrmse nrmseV];
+%    
+%    %[predictions] =[predictions predictARMAmultistep(deseasoned,n1,5,0,1,[])];
+%    %[preV] = predictARMAmultistep(xV,n1,p,q,Tmax,'example');
+% end
+% 
+% figure()
+% 
+% % plot(indexes,predictions,"-o");
+% % hold on;
+% plot(indexes,nrmse,"-o");
+% title("NRMSE for one step forward prediction with AR(5) model, in prices time series");
+% xlabel("Size of learning test");
+% legend("NRMSE");
+
+index=1;
+nrmseAR5 = zeros(5,1);
+for i=70:5:90
+    [nrmseAR5(index),~,~,~] = predictARMAnrmse(deseasoned, 5, 0, 1, round(0.01*(100-i)*n), '');
+    index=index+1;
+end
+figure(9)
+plot((0.7:0.05:0.9).',nrmseAR5,'-o')
+title('NRMSE for one step forward price prediction with AR(5) model')
+ylabel('NRMSE value')
+xlabel('Percentage of time series used as training set ')
+
+%% NO-LINEAR 
+%Getting the residuals from our best linear model fit( in linear 3).
+residuals =deseasoned - predict(armamodel,deseasoned)
+figure(10);
+plot(residuals);
+title('Residuals from the linear model fit( in linear 3). ');
+xlabel('t');
+ylabel('residual');
+
+iidtimeSeries=residuals
+
+%Resampling the residuals time series
+for i=1:20 
+    RandIndexes=randperm(n-1);
+    iidtimeSeries=[iidtimeSeries  residuals(RandIndexes)];
 end
 
+%Linear autocorrelation
+%maxtau1 for the autocorrelation and mutual information
+maxtau1=3;
+nOfnewSamples=20;
+LinearAutoCorrelations=zeros(maxtau1,nOfnewSamples+1);
+
+%computing autocorrelation for all the new samples
 figure()
+for i=1:(nOfnewSamples+1) 
+    autoCorr=autocorrelation(iidtimeSeries(:,i), maxtau1)
+    LinearAutoCorrelations(:,i)=autoCorr(2:(maxtau1+1),2);
+end
+clf;
 
-% plot(indexes,predictions,"-o");
-% hold on;
-plot(indexes,nrmse,"-o");
-title("NRMSE for one step forward prediction with AR(5) model, in prices time series");
-xlabel("Size of learning test");
-legend("NRMSE");
+%plotting the autocorrelation function
+figure(10)
+for i=1:maxtau1
+    plot([0:nOfnewSamples] , LinearAutoCorrelations(i,:),'-o');
+    hold on
+end
+plot([0 nOfnewSamples+1],autlim*[1 1],'--c','linewidth',1.5)
+plot([0 nOfnewSamples+1],-autlim*[1 1],'--c','linewidth',1.5)
+legend("\tau=1","\tau=2","\tau=3")
+title('Linear autocorrelation for the 21 samples.')
+ylabel("autocorrelation")
+xlabel("sample Number (n=0 belongs to the residuals)");
 
 
+%Mutual information for the 21 samples
+SamplesMutualInfo=zeros(maxtau1,nOfnewSamples+1);
+figure()
+%computing mutual information for all the new samples
+for i=1:(nOfnewSamples+1)
+    mut=mutualinformation(iidtimeSeries(:,i), maxtau1)
+    SamplesMutualInfo(:,i)=mut(2:(maxtau1+1),2);
+end
+clf;
+
+%plotting the mutual information function
+figure(11)
+for i=1:maxtau1
+    plot([0:nOfnewSamples] , SamplesMutualInfo(i,:),'-o');
+    hold on
+end
+plot([0 nOfnewSamples+1],autlim*[1 1],'--c','linewidth',1.5)
+legend("\tau=1","\tau=2","\tau=3")
+title('Mutual information for the 21 samples.')
+ylabel("mutual information")
+xlabel("sample Number (0 belongs to the original residuals)");
+
+%Histogram for lat(tau) =1 for autocorrelation and mutual information
+% bins=10;
+figure(12)
+histogram(LinearAutoCorrelations(1,2:(nOfnewSamples+1)));
+hold on;
+line([LinearAutoCorrelations(1,1) LinearAutoCorrelations(1,1)], [0 9],'Color','red','linewidth',1.5);
+title("Autocorrealtion for the 20 new samples and for original residuals of price(red)");
+
+figure(13)
+histogram(SamplesMutualInfo(1,2:(nOfnewSamples+1)));
+hold on;
+line([SamplesMutualInfo(1,1) SamplesMutualInfo(1,1)], [0 9],'Color','red','linewidth',1.5);
+title("Mutual information for the 20 new samples and for original residuals of price(red)");
