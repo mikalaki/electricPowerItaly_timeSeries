@@ -184,7 +184,7 @@ for i=1:maxtau1
     plot([0:nOfnewSamples] , SamplesMutualInfo(i,:),'-o');
     hold on
 end
-plot([0 nOfnewSamples+1],autlim*[1 1],'--c','linewidth',1.5)
+
 legend("\tau=1","\tau=2","\tau=3")
 title('Mutual information for the 21 samples.(demand analysis)')
 ylabel("mutual information")
