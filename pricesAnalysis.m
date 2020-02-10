@@ -1,4 +1,5 @@
 %% Ergasia Xronoseirwn : Zisou Charilaos AEM 9213 ,Karatzas Michalis AEM 9137
+%% Linear Analysis
 close all; clear; clc;
 
 % import data
@@ -21,54 +22,43 @@ load('pricesData.mat');
 
 %constants
 per = 7;
-maorder = 7;
 maxtau = 100;
 alpha = 0.05;
 Tmax=20;
 zalpha = norminv(1-alpha/2);
-n = length(prices);
+n = length(prices)-1;
 
 % plot unprocessed time series
 figure(1)
-clf
-% plot(prices,'-o')
 plot(prices)
-hold on
 xlabel('t')
-ylabel('Prices')
+ylabel('y(t)')
 title('Unprocessed prices time series')
 
 %% LINEAR 1 
-% % detrend time series MA
-% maPrices = movingaveragesmooth2(prices, maorder);
-% detrended = prices - maPrices;
-% figure(2)
-% plot(detrended)
-% title(['Detrended prices time series by MA(', num2str(maorder), ') smoothing'])
-
-% 1a.detrend time series First Differences
-detrended=zeros(364,1);
-for i=1:364
+% 1a. Detrend time series by first order differences
+detrended=zeros(n,1);
+for i=1:n
     detrended(i)=prices(i+1)-prices(i);
 end
 figure(2)
 plot(detrended)
-title(['Detrended prices time series by first differencies'])
+title('Detrended prices time series by first order differences')
 
-%1b. deseason time series
+%1b. Deseason time series
 deseasonedc = seasonalcomponents(detrended, per);
-%deseasonedma = movingaverageseasonal(detrended, per);
 deseasoned =  detrended - deseasonedc;
 figure(3)
 plot(deseasoned)
-title('Deseasoned (and detrended) prices time series')
+title('Deseasoned prices time series')
 
 
 %%  LINEAR 2
-%2. Autocorrelation of deseasoned time series using average seasonal component
-ac1 = autocorrelation(deseasoned, maxtau);
-autlim = zalpha/sqrt(n);
+%2. Autocorrelation of deseasoned time series 
 figure(4)
+ac1 = autocorrelation(deseasoned(~isnan(deseasoned)), maxtau);
+autlim = zalpha/sqrt(n);
+figure(5)
 clf
 hold on
 for ii=1:maxtau
@@ -79,18 +69,12 @@ plot([0 maxtau+1],autlim*[1 1],'--c','linewidth',1.5)
 plot([0 maxtau+1],-autlim*[1 1],'--c','linewidth',1.5)
 xlabel('\tau')
 ylabel('r(\tau)')
-title('Autocorrelation of deseasoned time series')
-% tittxt = sprintf('deseasoned time series by ave seasonal comp (%d), Ljung-Box test',per);
-% figure(5)
-
-% Ljung-Box Portmanteau Test
-figure(6)
-tittxt = ('Deseasoned time series');
-[h2V,p2V,Q2V] = portmanteauLB(ac1(2:maxtau+1,2),n,alpha,tittxt);
+title('Autocorrelation of prices time series')
+hold off
 
 % Partial autocorrelation
 pac1 = parautocor(deseasoned, maxtau);
-figure(7)
+figure(6)
 clf
 hold on
 for ii=1:maxtau
@@ -101,20 +85,27 @@ plot([0 maxtau+1],autlim*[1 1],'--c','linewidth',1.5)
 plot([0 maxtau+1],-autlim*[1 1],'--c','linewidth',1.5)
 xlabel('\tau')
 ylabel('\phi_{\tau,\tau}')
-title('Partial autocorrelation')
+title('Partial autocorrelation of prices time series')
+hold off
+
+% Ljung-Box Portmanteau Test
+figure(7)
+tittxt = ('Prices time series');
+[h2V,p2V,Q2V] = portmanteauLB(ac1(2:maxtau+1,2),n,alpha,tittxt);
+
+
 
 %% LINEAR 3
-% %getting the AICS for different models, in order to choose
-% akaike(deseasoned,Tmax);
-% %result is p=3 and q=3
+% AIC
+%aicMatrix = akaike(deseasoned, Tmax);
+
 
 %ARMA model parameters.
 p=3
-%p=3
 q=3
 
 %fitting the model
-[nrmseV,phiV,thetaV,SDz,aicS,fpeS,armamodel]=fitARMA(deseasoned, p, q, Tmax);
+[nrmseARMA,phiV,thetaV,SDz,aicS,fpeS,armamodel]=fitARMA(deseasoned, p, q, Tmax);
 
 %printing the coefficients
 fprintf('Estimated coefficients of phi(B):\n');
@@ -128,63 +119,34 @@ fprintf('AIC: %f \n',aicS);
 fprintf('FPE: %f \n',fpeS);
 
 %plotting the NRMSE for Tmax steps forward
-figure(8);
-plot(nrmseV,"-o");
-title("NRMSE");
-xlabel("steps forward");
-ylabel("value");
+figure(9);
+plot(nrmseARMA,"-o");
+title('Prices: NRMSE of ARMA(3,3) for T=1,2...10')
+xlabel("T");
+ylabel("NRMSE");
 
 
 %% LINEAR 4
-% %predictions=[];
-% indexes=[];
-% nrmse=[];
-% step=30;
-% for n1 = 20:step:n %6 different points in total
-%    indexes=[indexes n1];
-%    
-%    [nrmseV,~,~,~] = predictARMAnrmse(deseasoned,5,0,1,n-n1,[]);
-%    nrmse=[nrmse nrmseV];
-%    
-%    %[predictions] =[predictions predictARMAmultistep(deseasoned,n1,5,0,1,[])];
-%    %[preV] = predictARMAmultistep(xV,n1,p,q,Tmax,'example');
-% end
-% 
-% figure()
-% 
-% % plot(indexes,predictions,"-o");
-% % hold on;
-% plot(indexes,nrmse,"-o");
-% title("NRMSE for one step forward prediction with AR(5) model, in prices time series");
-% xlabel("Size of learning test");
-% legend("NRMSE");
-
 index=1;
 nrmseAR5 = zeros(5,1);
 for i=70:5:90
     [nrmseAR5(index),~,~,~] = predictARMAnrmse(deseasoned, 5, 0, 1, round(0.01*(100-i)*n), '');
     index=index+1;
 end
-figure(9)
+figure(10)
 plot((0.7:0.05:0.9).',nrmseAR5,'-o')
-title('NRMSE for one step forward price prediction with AR(5) model')
-ylabel('NRMSE value')
-xlabel('Percentage of time series used as training set ')
+ylabel("NRMSE");
+xlabel("percent of training data");
+title('Prices: NRMSE of AR(5) using 70%, 75%, 80%, 85%, 90% of training data')
 
-%% NO-LINEAR 
-%Getting the residuals from our best linear model fit( in linear 3).
-residuals =deseasoned - predict(armamodel,deseasoned)
-figure(10);
-plot(residuals);
-title('Residuals from the linear model fit( in linear 3). ');
-xlabel('t');
-ylabel('residual');
+%% Non-Linear Analysis
+%Getting the residuals from our best linear model fit (in linear 3)
+residuals = deseasoned - predict(armamodel, deseasoned);
+iidtimeSeries=residuals;
 
-iidtimeSeries=residuals
-
-%Resampling the residuals time series
+% Resampling the residuals time series
 for i=1:20 
-    RandIndexes=randperm(n-1);
+    RandIndexes=randperm(n);
     iidtimeSeries=[iidtimeSeries  residuals(RandIndexes)];
 end
 
@@ -203,7 +165,7 @@ end
 clf;
 
 %plotting the autocorrelation function
-figure(10)
+figure(11)
 for i=1:maxtau1
     plot([0:nOfnewSamples] , LinearAutoCorrelations(i,:),'-o');
     hold on
@@ -227,7 +189,7 @@ end
 clf;
 
 %plotting the mutual information function
-figure(11)
+figure(12)
 for i=1:maxtau1
     plot([0:nOfnewSamples] , SamplesMutualInfo(i,:),'-o');
     hold on
@@ -240,13 +202,13 @@ xlabel("sample Number (0 belongs to the original residuals)");
 
 %Histogram for lat(tau) =1 for autocorrelation and mutual information
 % bins=10;
-figure(12)
+figure(13)
 histogram(LinearAutoCorrelations(1,2:(nOfnewSamples+1)));
 hold on;
 line([LinearAutoCorrelations(1,1) LinearAutoCorrelations(1,1)], [0 9],'Color','red','linewidth',1.5);
 title("Autocorrealtion for the 20 new samples and for original residuals of price(red)");
 
-figure(13)
+figure(14)
 histogram(SamplesMutualInfo(1,2:(nOfnewSamples+1)));
 hold on;
 line([SamplesMutualInfo(1,1) SamplesMutualInfo(1,1)], [0 9],'Color','red','linewidth',1.5);
