@@ -145,7 +145,8 @@ residuals = deseasoned - predict(armamodel, deseasoned);
 iidtimeSeries=residuals;
 
 % Resampling the residuals time series
-for i=1:20 
+nOfnewSamples=20;
+for i=1:nOfnewSamples 
     RandIndexes=randperm(n);
     iidtimeSeries=[iidtimeSeries  residuals(RandIndexes)];
 end
@@ -153,7 +154,6 @@ end
 %Linear autocorrelation
 %maxtau1 for the autocorrelation and mutual information
 maxtau1=3;
-nOfnewSamples=20;
 LinearAutoCorrelations=zeros(maxtau1,nOfnewSamples+1);
 
 %computing autocorrelation for all the new samples
@@ -173,7 +173,7 @@ end
 plot([0 nOfnewSamples+1],autlim*[1 1],'--c','linewidth',1.5)
 plot([0 nOfnewSamples+1],-autlim*[1 1],'--c','linewidth',1.5)
 legend("\tau=1","\tau=2","\tau=3")
-title('Linear autocorrelation for the 21 samples.')
+title('Linear autocorrelation for the 21 samples.(price analysis)')
 ylabel("autocorrelation")
 xlabel("sample Number (n=0 belongs to the residuals)");
 
@@ -206,10 +206,10 @@ figure(13)
 histogram(LinearAutoCorrelations(1,2:(nOfnewSamples+1)));
 hold on;
 line([LinearAutoCorrelations(1,1) LinearAutoCorrelations(1,1)], [0 9],'Color','red','linewidth',1.5);
-title("Autocorrealtion for the 20 new samples and for original residuals of price(red)");
+title("Autocorrealtion histogram of new samples and of the original(red) (price analysis");
 
 figure(14)
 histogram(SamplesMutualInfo(1,2:(nOfnewSamples+1)));
 hold on;
 line([SamplesMutualInfo(1,1) SamplesMutualInfo(1,1)], [0 9],'Color','red','linewidth',1.5);
-title("Mutual information for the 20 new samples and for original residuals of price(red)");
+title("Mutual information histogram of  new samples and of the original(red) (price analysis)");

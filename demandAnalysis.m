@@ -129,5 +129,79 @@ ylabel("NRMSE");
 xlabel("Percent of training data");
 title('Demand: NRMSE of AR(5) using 70%, 75%, 80%, 85%, 90% of training data')
 
+%% Non-Linear Analysis
+%Getting the residuals from our best linear model fit (in linear 3)
+residuals = deseasoned - predict(armamodel, deseasoned);
+iidtimeSeries=residuals;
+
+% Resampling the residuals time series
+nOfnewSamples=20;
+for i=1:nOfnewSamples 
+    RandIndexes=randperm(n);
+    iidtimeSeries=[iidtimeSeries  residuals(RandIndexes)];
+end
+
+%Linear autocorrelation
+%maxtau1 for the autocorrelation and mutual information
+maxtau1=3;
+LinearAutoCorrelations=zeros(maxtau1,nOfnewSamples+1);
+
+%computing autocorrelation for all the new samples
+figure()
+for i=1:(nOfnewSamples+1) 
+    autoCorr=autocorrelation(iidtimeSeries(:,i), maxtau1)
+    LinearAutoCorrelations(:,i)=autoCorr(2:(maxtau1+1),2);
+end
+clf;
+
+%plotting the autocorrelation function
+figure(11)
+for i=1:maxtau1
+    plot([0:nOfnewSamples] , LinearAutoCorrelations(i,:),'-o');
+    hold on
+end
+plot([0 nOfnewSamples+1],autlim*[1 1],'--c','linewidth',1.5)
+plot([0 nOfnewSamples+1],-autlim*[1 1],'--c','linewidth',1.5)
+legend("\tau=1","\tau=2","\tau=3")
+title('Linear autocorrelation of the 21 samples. (demand analysis)')
+ylabel("autocorrelation")
+xlabel("Sample number (0 belongs to the residuals)");
+
+
+%Mutual information for the 21 samples
+SamplesMutualInfo=zeros(maxtau1,nOfnewSamples+1);
+figure()
+%computing mutual information for all the new samples
+for i=1:(nOfnewSamples+1)
+    mut=mutualinformation(iidtimeSeries(:,i), maxtau1)
+    SamplesMutualInfo(:,i)=mut(2:(maxtau1+1),2);
+end
+clf;
+
+%plotting the mutual information function
+figure(12)
+for i=1:maxtau1
+    plot([0:nOfnewSamples] , SamplesMutualInfo(i,:),'-o');
+    hold on
+end
+plot([0 nOfnewSamples+1],autlim*[1 1],'--c','linewidth',1.5)
+legend("\tau=1","\tau=2","\tau=3")
+title('Mutual information for the 21 samples.(demand analysis)')
+ylabel("mutual information")
+xlabel("Sample number (0 belongs to the original residuals) ");
+
+%Histogram for lat(tau) =1 for autocorrelation and mutual information
+% bins=10;
+figure(13)
+histogram(LinearAutoCorrelations(1,2:(nOfnewSamples+1)));
+hold on;
+line([LinearAutoCorrelations(1,1) LinearAutoCorrelations(1,1)], [0 9],'Color','red','linewidth',1.5);
+title("Autocorrealtion histogram of new samples and of the original(red) (demand analysis");
+
+figure(14)
+histogram(SamplesMutualInfo(1,2:(nOfnewSamples+1)));
+hold on;
+line([SamplesMutualInfo(1,1) SamplesMutualInfo(1,1)], [0 9],'Color','red','linewidth',1.5);
+title("Mutual information histogram of  new samples and of the original(red) (demand analysis)");
 
 
