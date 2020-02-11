@@ -1,0 +1,887 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.5.7)  10 FEB 2020 18:18
+entering extended mode
+**./AnaforaXronoseirwn.tex
+(AnaforaXronoseirwn.tex
+LaTeX2e <2018-12-01>
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\report.cls"
+Document Class: report 2018/09/03 v1.4i Standard LaTeX document class
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size12.clo"
+File: size12.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\c@figure=\count87
+\c@table=\count88
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsmath.s
+ty"
+Package: amsmath 2018/12/01 v2.17b AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amstext.s
+ty"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.st
+y"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks14
+\ex@=\dimen103
+))
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.st
+y"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen104
+)
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsopn.st
+y"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count89
+LaTeX Info: Redefining \frac on input line 223.
+\uproot@=\count90
+\leftroot@=\count91
+LaTeX Info: Redefining \overline on input line 385.
+\classnum@=\count92
+\DOTSCASE@=\count93
+LaTeX Info: Redefining \ldots on input line 482.
+LaTeX Info: Redefining \dots on input line 485.
+LaTeX Info: Redefining \cdots on input line 606.
+\Mathstrutbox@=\box27
+\strutbox@=\box28
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 729.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
+\macc@depth=\count94
+\c@MaxMatrixCols=\count95
+\dotsspace@=\muskip10
+\c@parentequation=\count96
+\dspbrk@lvl=\count97
+\tag@help=\toks15
+\row@=\count98
+\column@=\count99
+\maxfields@=\count100
+\andhelp@=\toks16
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks17
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2844.
+LaTeX Info: Redefining \] on input line 2845.
+) ("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ucs\ucs.sty"
+Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
+
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ucs\uni-global.de
+f"
+File: uni-global.def 2013/05/13 UCS: Unicode global data
+)
+\uc@secondtry=\count101
+\uc@combtoks=\toks19
+\uc@combtoksb=\toks20
+\uc@temptokena=\toks21
+)
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\inputenc.sty
+"
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks22
+\inpenc@posthook=\toks23
+ ("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ucs\utf8x.def"
+File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
+))
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\indentfirst
+.sty"
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+)
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.sty
+"
+Package: babel 2019/04/03 3.29 The Babel package
+
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\switch.de
+f"
+File: switch.def 2019/04/03 3.29 Babel switching mechanism
+)
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/arabi\bblopts.cfg
+"
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/babel-greek\greek
+.ldf"
+Language: greek 2016/09/07 v1.9g Greek support for the babel system
+
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.def
+"
+File: babel.def 2019/04/03 3.29 Babel common definitions
+\babel@savecnt=\count102
+\U@D=\dimen112
+
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\txtbabel.
+def")
+\bbl@dirlevel=\count103
+)
+\bbl@monogreek=\count104
+\bbl@polygreek=\count105
+\bbl@ancientgreek=\count106
+
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/greek-fontenc\lgr
+enc.def"
+File: lgrenc.def 2015/12/07 v0.13.1 LGR Greek font encoding definitions
+
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/greek-fontenc\gre
+ek-fontenc.def"
+File: greek-fontenc.def 2015/08/04 v0.13 Common Greek font encoding definitions
+
+))
+LaTeX Info: Composite with undeclared \< in encoding LGR on input line 418.
+LaTeX Info: Composite with undeclared \> in encoding LGR on input line 418.
+)
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/babel-english\eng
+lish.ldf"
+Language: english 2017/06/06 v3.3r English support from the babel system
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings
+.sty"
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.s
+ty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks24
+)
+\lst@mode=\count107
+\lst@gtempboxa=\box29
+\lst@token=\toks25
+\lst@length=\count108
+\lst@currlwidth=\dimen113
+\lst@column=\count109
+\lst@pos=\count110
+\lst@lostspace=\dimen114
+\lst@width=\dimen115
+\lst@newlines=\count111
+\lst@lineno=\count112
+\lst@maxwidth=\dimen116
+
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstmisc.
+sty"
+File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
+\c@lstnumber=\count113
+\lst@skipnumbers=\count114
+\lst@framebox=\box30
+)
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings
+.cfg"
+File: listings.cfg 2019/02/27 1.8b listings configuration
+))
+Package: listings 2019/02/27 1.8b (Carsten Heinz)
+
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphicx
+.sty"
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphics
+.sty"
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.sty
+"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\grap
+hics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdft
+ex.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen117
+\Gin@req@width=\dimen118
+)
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count115
+\float@exts=\toks26
+\float@box=\box31
+\@float@everytoks=\toks27
+\@floatcapt=\box32
+)
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\subcaptio
+n.sty"
+Package: subcaption 2019/09/01 v1.3a Sub-captions (AR)
+
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption.s
+ty"
+Package: caption 2019/09/01 v3.3d Customizing captions (AR)
+
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption3.
+sty"
+Package: caption3 2019/09/01 v1.8d caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
+\captionmargin=\dimen119
+\captionmargin@=\dimen120
+\captionwidth=\dimen121
+\caption@tempdima=\dimen122
+\caption@indent=\dimen123
+\caption@parindent=\dimen124
+\caption@hangindent=\dimen125
+)
+\c@caption@flags=\count116
+\c@ContinuedFloat=\count117
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+)
+\c@subfigure=\count118
+\c@subtable=\count119
+) (AnaforaXronoseirwn.aux
+LaTeX Font Info:    Try loading font information for LGR+cmr on input line 3.
+
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/cbfonts-fd\lgrcmr
+.fd"
+File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
+))
+\openout1 = `AnaforaXronoseirwn.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ucs\ucsencs.def"
+File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
+LGR\textpentedeka already defined.
+LGR\textpenteqilioi already defined.
+LGR\textpentemuria already defined.
+LGR\textstigma already defined.
+LGR\textqoppa already defined.
+LGR\texteuro already defined.
+LGR\textperthousand already defined.
+LGR\textquoteleft already defined.
+LGR\textquoteright already defined.
+LGR\u already defined.
+LGR\= already defined.
+LGR\" already defined.
+LGR\textpercent already defined.
+LGR\textperiodcentered already defined.
+LGR\' already defined.
+LGR\textanoteleia already defined.
+LGR\textAlpha already defined.
+LGR\textBeta already defined.
+LGR\textDelta already defined.
+LGR\textEpsilon already defined.
+LGR\textPhi already defined.
+LGR\textGamma already defined.
+LGR\textEta already defined.
+LGR\textIota already defined.
+LGR\textTheta already defined.
+LGR\textKappa already defined.
+LGR\textLambda already defined.
+LGR\textMu already defined.
+LGR\textNu already defined.
+LGR\textOmicron already defined.
+LGR\textPi already defined.
+LGR\textChi already defined.
+LGR\textRho already defined.
+LGR\textSigma already defined.
+LGR\textTau already defined.
+LGR\textUpsilon already defined.
+LGR\textOmega already defined.
+LGR\textXi already defined.
+LGR\textPsi already defined.
+LGR\textZeta already defined.
+LGR\` already defined.
+LGR\textalpha already defined.
+LGR\textbeta already defined.
+LGR\textvarsigma already defined.
+LGR\textdelta already defined.
+LGR\textepsilon already defined.
+LGR\textphi already defined.
+LGR\textgamma already defined.
+LGR\texteta already defined.
+LGR\textiota already defined.
+LGR\texttheta already defined.
+LGR\textkappa already defined.
+LGR\textlambda already defined.
+LGR\textmu already defined.
+LGR\textnu already defined.
+LGR\textomicron already defined.
+LGR\textpi already defined.
+LGR\textchi already defined.
+LGR\textrho already defined.
+LGR\textautosigma already defined.
+LGR\textsigma already defined.
+LGR\texttau already defined.
+LGR\textupsilon already defined.
+LGR\textomega already defined.
+LGR\textxi already defined.
+LGR\textpsi already defined.
+LGR\textzeta already defined.
+LGR\guillemotleft already defined.
+LGR\guillemotright already defined.
+LGR\~ already defined.
+LGR\textemdash already defined.
+LGR\textdigamma already defined.
+LGR\textDigamma already defined.
+LGR\textdexiakeraia already defined.
+LGR\textaristerikeraia already defined.
+
+fontencoding LGR patched
+)
+
+Package utf8x.def Warning: Character(s)159 etc.gotredefinedsomewhere.
+(utf8x.def)                Restoringtoitsutf8x-meaning on input line 34.
+
+\c@lstlisting=\count120
+
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-
+pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count121
+\scratchdimen=\dimen126
+\scratchbox=\box33
+\nofMPsegments=\count122
+\nofMParguments=\count123
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count124
+\MPscratchDim=\dimen127
+\MPnumerator=\count125
+\makeMPintoPDFobject=\count126
+\everyMPtoPDFconversion=\toks29
+)
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\epstopdf
+-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\infwar
+err.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\grfext.s
+ty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\kvdefi
+nekeys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\ltxcmd
+s.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\kvoption
+s.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\kvsetk
+eys.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\etexcm
+ds.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\ifluat
+ex.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+))))
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\pdftex
+cmds.sty"
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\ifpdf.
+sty"
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
+("C:\Users\Charis\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ucs\uni-3.def"
+File: uni-3.def 2013/05/13 UCS: Unicode data U+0300..U+03FF
+)
+[1
+
+{C:/Users/Charis/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Package epstopdf Info: Source file: <unprocessedDemand.eps>
+(epstopdf)                    date: 2020-02-10 15:21:32
+(epstopdf)                    size: 23567 bytes
+(epstopdf)             Output file: <unprocessedDemand-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-02-10 15:34:49
+(epstopdf)                    size: 10413 bytes
+(epstopdf)             Command: <epstopdf --outfile=unprocessedDemand-eps-conve
+rted-to.pdf unprocessedDemand.eps>
+(epstopdf)             \includegraphics on input line 49.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex (file ./unprocessedDemand-eps-converted-to.pdf): PDF i
+nclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<unprocessedDemand-eps-converted-to.pdf, id=7, 421.575pt x 316.18124pt>
+File: unprocessedDemand-eps-converted-to.pdf Graphic file (type pdf)
+<use unprocessedDemand-eps-converted-to.pdf>
+Package pdftex.def Info: unprocessedDemand-eps-converted-to.pdf  used on input 
+line 49.
+(pdftex.def)             Requested size: 195.0pt x 146.25082pt.
+Package epstopdf Info: Source file: <unprocessedPrices.eps>
+(epstopdf)                    date: 2020-02-10 15:19:56
+(epstopdf)                    size: 23726 bytes
+(epstopdf)             Output file: <unprocessedPrices-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-02-10 15:34:50
+(epstopdf)                    size: 10289 bytes
+(epstopdf)             Command: <epstopdf --outfile=unprocessedPrices-eps-conve
+rted-to.pdf unprocessedPrices.eps>
+(epstopdf)             \includegraphics on input line 52.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex (file ./unprocessedPrices-eps-converted-to.pdf): PDF i
+nclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<unprocessedPrices-eps-converted-to.pdf, id=8, 421.575pt x 316.18124pt>
+File: unprocessedPrices-eps-converted-to.pdf Graphic file (type pdf)
+<use unprocessedPrices-eps-converted-to.pdf>
+Package pdftex.def Info: unprocessedPrices-eps-converted-to.pdf  used on input 
+line 52.
+(pdftex.def)             Requested size: 195.0pt x 146.25082pt.
+
+Overfull \hbox (2.61049pt too wide) in paragraph at lines 48--54
+[]$[]$ $[]$ 
+ []
+
+Package epstopdf Info: Source file: <detrendedDemand.eps>
+(epstopdf)                    date: 2020-02-10 15:48:18
+(epstopdf)                    size: 23654 bytes
+(epstopdf)             Output file: <detrendedDemand-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-02-10 15:51:03
+(epstopdf)                    size: 10077 bytes
+(epstopdf)             Command: <epstopdf --outfile=detrendedDemand-eps-convert
+ed-to.pdf detrendedDemand.eps>
+(epstopdf)             \includegraphics on input line 59.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex (file ./detrendedDemand-eps-converted-to.pdf): PDF inc
+lusion: found PDF version <1.7>, but at most version <1.5> allowed
+<detrendedDemand-eps-converted-to.pdf, id=9, 421.575pt x 316.18124pt>
+File: detrendedDemand-eps-converted-to.pdf Graphic file (type pdf)
+<use detrendedDemand-eps-converted-to.pdf>
+Package pdftex.def Info: detrendedDemand-eps-converted-to.pdf  used on input li
+ne 59.
+(pdftex.def)             Requested size: 195.0pt x 146.25082pt.
+Package epstopdf Info: Source file: <detrendedPrices.eps>
+(epstopdf)                    date: 2020-02-10 15:49:14
+(epstopdf)                    size: 23868 bytes
+(epstopdf)             Output file: <detrendedPrices-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-02-10 15:51:04
+(epstopdf)                    size: 9742 bytes
+(epstopdf)             Command: <epstopdf --outfile=detrendedPrices-eps-convert
+ed-to.pdf detrendedPrices.eps>
+(epstopdf)             \includegraphics on input line 62.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex (file ./detrendedPrices-eps-converted-to.pdf): PDF inc
+lusion: found PDF version <1.7>, but at most version <1.5> allowed
+<detrendedPrices-eps-converted-to.pdf, id=10, 421.575pt x 316.18124pt>
+File: detrendedPrices-eps-converted-to.pdf Graphic file (type pdf)
+<use detrendedPrices-eps-converted-to.pdf>
+Package pdftex.def Info: detrendedPrices-eps-converted-to.pdf  used on input li
+ne 62.
+(pdftex.def)             Requested size: 195.0pt x 146.25082pt.
+
+Overfull \hbox (2.61049pt too wide) in paragraph at lines 58--64
+[]$[]$ $[]$ 
+ []
+
+[1 <./unprocessedDemand-eps-converted-to.pdf> <./unprocessedPrices-eps-converte
+d-to.pdf> <./detrendedDemand-eps-converted-to.pdf> <./detrendedPrices-eps-conve
+rted-to.pdf>]
+Package epstopdf Info: Source file: <deseasonedDemand.eps>
+(epstopdf)                    date: 2020-02-10 15:48:39
+(epstopdf)                    size: 23670 bytes
+(epstopdf)             Output file: <deseasonedDemand-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-02-10 15:51:04
+(epstopdf)                    size: 9684 bytes
+(epstopdf)             Command: <epstopdf --outfile=deseasonedDemand-eps-conver
+ted-to.pdf deseasonedDemand.eps>
+(epstopdf)             \includegraphics on input line 70.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex (file ./deseasonedDemand-eps-converted-to.pdf): PDF in
+clusion: found PDF version <1.7>, but at most version <1.5> allowed
+<deseasonedDemand-eps-converted-to.pdf, id=52, 421.575pt x 316.18124pt>
+File: deseasonedDemand-eps-converted-to.pdf Graphic file (type pdf)
+<use deseasonedDemand-eps-converted-to.pdf>
+Package pdftex.def Info: deseasonedDemand-eps-converted-to.pdf  used on input l
+ine 70.
+(pdftex.def)             Requested size: 195.0pt x 146.25082pt.
+Package epstopdf Info: Source file: <deseasonedPrices.eps>
+(epstopdf)                    date: 2020-02-10 15:49:42
+(epstopdf)                    size: 23484 bytes
+(epstopdf)             Output file: <deseasonedPrices-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-02-10 15:51:05
+(epstopdf)                    size: 9593 bytes
+(epstopdf)             Command: <epstopdf --outfile=deseasonedPrices-eps-conver
+ted-to.pdf deseasonedPrices.eps>
+(epstopdf)             \includegraphics on input line 73.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex (file ./deseasonedPrices-eps-converted-to.pdf): PDF in
+clusion: found PDF version <1.7>, but at most version <1.5> allowed
+<deseasonedPrices-eps-converted-to.pdf, id=53, 421.575pt x 316.18124pt>
+File: deseasonedPrices-eps-converted-to.pdf Graphic file (type pdf)
+<use deseasonedPrices-eps-converted-to.pdf>
+Package pdftex.def Info: deseasonedPrices-eps-converted-to.pdf  used on input l
+ine 73.
+(pdftex.def)             Requested size: 195.0pt x 146.25082pt.
+
+Overfull \hbox (2.61049pt too wide) in paragraph at lines 69--75
+[]$[]$ $[]$ 
+ []
+
+Package epstopdf Info: Source file: <acDemand.eps>
+(epstopdf)                    date: 2020-02-10 15:56:02
+(epstopdf)                    size: 25935 bytes
+(epstopdf)             Output file: <acDemand-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-02-10 15:58:57
+(epstopdf)                    size: 8935 bytes
+(epstopdf)             Command: <epstopdf --outfile=acDemand-eps-converted-to.p
+df acDemand.eps>
+(epstopdf)             \includegraphics on input line 81.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex (file ./acDemand-eps-converted-to.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+<acDemand-eps-converted-to.pdf, id=54, 421.575pt x 316.18124pt>
+File: acDemand-eps-converted-to.pdf Graphic file (type pdf)
+<use acDemand-eps-converted-to.pdf>
+Package pdftex.def Info: acDemand-eps-converted-to.pdf  used on input line 81.
+(pdftex.def)             Requested size: 195.0pt x 146.25082pt.
+Package epstopdf Info: Source file: <acPrices.eps>
+(epstopdf)                    date: 2020-02-10 15:53:48
+(epstopdf)                    size: 25208 bytes
+(epstopdf)             Output file: <acPrices-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-02-10 15:58:58
+(epstopdf)                    size: 9017 bytes
+(epstopdf)             Command: <epstopdf --outfile=acPrices-eps-converted-to.p
+df acPrices.eps>
+(epstopdf)             \includegraphics on input line 84.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex (file ./acPrices-eps-converted-to.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+<acPrices-eps-converted-to.pdf, id=55, 421.575pt x 316.18124pt>
+File: acPrices-eps-converted-to.pdf Graphic file (type pdf)
+<use acPrices-eps-converted-to.pdf>
+Package pdftex.def Info: acPrices-eps-converted-to.pdf  used on input line 84.
+(pdftex.def)             Requested size: 195.0pt x 146.25082pt.
+
+Overfull \hbox (2.61049pt too wide) in paragraph at lines 80--86
+[]$[]$ $[]$ 
+ []
+
+Package epstopdf Info: Source file: <pacDemand.eps>
+(epstopdf)                    date: 2020-02-10 16:21:36
+(epstopdf)                    size: 27985 bytes
+(epstopdf)             Output file: <pacDemand-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-02-10 16:21:40
+(epstopdf)                    size: 9741 bytes
+(epstopdf)             Command: <epstopdf --outfile=pacDemand-eps-converted-to.
+pdf pacDemand.eps>
+(epstopdf)             \includegraphics on input line 90.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex (file ./pacDemand-eps-converted-to.pdf): PDF inclusion
+: found PDF version <1.7>, but at most version <1.5> allowed
+<pacDemand-eps-converted-to.pdf, id=56, 421.575pt x 316.18124pt>
+File: pacDemand-eps-converted-to.pdf Graphic file (type pdf)
+<use pacDemand-eps-converted-to.pdf>
+Package pdftex.def Info: pacDemand-eps-converted-to.pdf  used on input line 90.
+
+(pdftex.def)             Requested size: 195.0pt x 146.25082pt.
+Package epstopdf Info: Source file: <pacPrices.eps>
+(epstopdf)                    date: 2020-02-10 16:16:58
+(epstopdf)                    size: 27717 bytes
+(epstopdf)             Output file: <pacPrices-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-02-10 16:20:15
+(epstopdf)                    size: 9831 bytes
+(epstopdf)             Command: <epstopdf --outfile=pacPrices-eps-converted-to.
+pdf pacPrices.eps>
+(epstopdf)             \includegraphics on input line 93.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex (file ./pacPrices-eps-converted-to.pdf): PDF inclusion
+: found PDF version <1.7>, but at most version <1.5> allowed
+<pacPrices-eps-converted-to.pdf, id=57, 421.575pt x 316.18124pt>
+File: pacPrices-eps-converted-to.pdf Graphic file (type pdf)
+<use pacPrices-eps-converted-to.pdf>
+Package pdftex.def Info: pacPrices-eps-converted-to.pdf  used on input line 93.
+
+(pdftex.def)             Requested size: 195.0pt x 146.25082pt.
+
+Overfull \hbox (2.61049pt too wide) in paragraph at lines 89--95
+[]$[]$ $[]$ 
+ []
+
+[2 <./deseasonedDemand-eps-converted-to.pdf> <./deseasonedPrices-eps-converted-
+to.pdf> <./acDemand-eps-converted-to.pdf> <./acPrices-eps-converted-to.pdf> <./
+pacDemand-eps-converted-to.pdf> <./pacPrices-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <lbDemand.eps>
+(epstopdf)                    date: 2020-02-10 15:55:50
+(epstopdf)                    size: 28486 bytes
+(epstopdf)             Output file: <lbDemand-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-02-10 16:09:35
+(epstopdf)                    size: 15791 bytes
+(epstopdf)             Command: <epstopdf --outfile=lbDemand-eps-converted-to.p
+df lbDemand.eps>
+(epstopdf)             \includegraphics on input line 101.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex (file ./lbDemand-eps-converted-to.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+<lbDemand-eps-converted-to.pdf, id=109, 421.575pt x 316.18124pt>
+File: lbDemand-eps-converted-to.pdf Graphic file (type pdf)
+<use lbDemand-eps-converted-to.pdf>
+Package pdftex.def Info: lbDemand-eps-converted-to.pdf  used on input line 101.
+
+(pdftex.def)             Requested size: 195.0pt x 146.25082pt.
+Package epstopdf Info: Source file: <lbPrices.eps>
+(epstopdf)                    date: 2020-02-10 15:54:11
+(epstopdf)                    size: 27699 bytes
+(epstopdf)             Output file: <lbPrices-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-02-10 16:09:36
+(epstopdf)                    size: 13538 bytes
+(epstopdf)             Command: <epstopdf --outfile=lbPrices-eps-converted-to.p
+df lbPrices.eps>
+(epstopdf)             \includegraphics on input line 104.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex (file ./lbPrices-eps-converted-to.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+<lbPrices-eps-converted-to.pdf, id=110, 421.575pt x 316.18124pt>
+File: lbPrices-eps-converted-to.pdf Graphic file (type pdf)
+<use lbPrices-eps-converted-to.pdf>
+Package pdftex.def Info: lbPrices-eps-converted-to.pdf  used on input line 104.
+
+(pdftex.def)             Requested size: 195.0pt x 146.25082pt.
+
+Overfull \hbox (2.61049pt too wide) in paragraph at lines 100--106
+[]$[]$ $[]$ 
+ []
+
+Package epstopdf Info: Source file: <aicDemand.eps>
+(epstopdf)                    date: 2020-02-10 17:14:46
+(epstopdf)                    size: 30705 bytes
+(epstopdf)             Output file: <aicDemand-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-02-10 17:21:02
+(epstopdf)                    size: 10931 bytes
+(epstopdf)             Command: <epstopdf --outfile=aicDemand-eps-converted-to.
+pdf aicDemand.eps>
+(epstopdf)             \includegraphics on input line 115.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex (file ./aicDemand-eps-converted-to.pdf): PDF inclusion
+: found PDF version <1.7>, but at most version <1.5> allowed
+<aicDemand-eps-converted-to.pdf, id=111, 421.575pt x 316.18124pt>
+File: aicDemand-eps-converted-to.pdf Graphic file (type pdf)
+<use aicDemand-eps-converted-to.pdf>
+Package pdftex.def Info: aicDemand-eps-converted-to.pdf  used on input line 115
+.
+(pdftex.def)             Requested size: 195.0pt x 146.25082pt.
+Package epstopdf Info: Source file: <aicPrices.eps>
+(epstopdf)                    date: 2020-02-10 17:16:25
+(epstopdf)                    size: 30944 bytes
+(epstopdf)             Output file: <aicPrices-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-02-10 17:21:03
+(epstopdf)                    size: 11194 bytes
+(epstopdf)             Command: <epstopdf --outfile=aicPrices-eps-converted-to.
+pdf aicPrices.eps>
+(epstopdf)             \includegraphics on input line 118.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex (file ./aicPrices-eps-converted-to.pdf): PDF inclusion
+: found PDF version <1.7>, but at most version <1.5> allowed
+<aicPrices-eps-converted-to.pdf, id=112, 421.575pt x 316.18124pt>
+File: aicPrices-eps-converted-to.pdf Graphic file (type pdf)
+<use aicPrices-eps-converted-to.pdf>
+Package pdftex.def Info: aicPrices-eps-converted-to.pdf  used on input line 118
+.
+(pdftex.def)             Requested size: 195.0pt x 146.25082pt.
+
+Overfull \hbox (2.61049pt too wide) in paragraph at lines 114--120
+[]$[]$ $[]$ 
+ []
+
+[3 <./lbDemand-eps-converted-to.pdf> <./lbPrices-eps-converted-to.pdf> <./aicDe
+mand-eps-converted-to.pdf> <./aicPrices-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <nrmseARMADemand.eps>
+(epstopdf)                    date: 2020-02-10 17:19:15
+(epstopdf)                    size: 19929 bytes
+(epstopdf)             Output file: <nrmseARMADemand-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-02-10 17:21:03
+(epstopdf)                    size: 9045 bytes
+(epstopdf)             Command: <epstopdf --outfile=nrmseARMADemand-eps-convert
+ed-to.pdf nrmseARMADemand.eps>
+(epstopdf)             \includegraphics on input line 126.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex (file ./nrmseARMADemand-eps-converted-to.pdf): PDF inc
+lusion: found PDF version <1.7>, but at most version <1.5> allowed
+<nrmseARMADemand-eps-converted-to.pdf, id=149, 421.575pt x 316.18124pt>
+File: nrmseARMADemand-eps-converted-to.pdf Graphic file (type pdf)
+<use nrmseARMADemand-eps-converted-to.pdf>
+Package pdftex.def Info: nrmseARMADemand-eps-converted-to.pdf  used on input li
+ne 126.
+(pdftex.def)             Requested size: 195.0pt x 146.25082pt.
+Package epstopdf Info: Source file: <nrmseARMAPrices.eps>
+(epstopdf)                    date: 2020-02-10 17:20:55
+(epstopdf)                    size: 20583 bytes
+(epstopdf)             Output file: <nrmseARMAPrices-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-02-10 17:21:04
+(epstopdf)                    size: 8958 bytes
+(epstopdf)             Command: <epstopdf --outfile=nrmseARMAPrices-eps-convert
+ed-to.pdf nrmseARMAPrices.eps>
+(epstopdf)             \includegraphics on input line 129.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex (file ./nrmseARMAPrices-eps-converted-to.pdf): PDF inc
+lusion: found PDF version <1.7>, but at most version <1.5> allowed
+<nrmseARMAPrices-eps-converted-to.pdf, id=150, 421.575pt x 316.18124pt>
+File: nrmseARMAPrices-eps-converted-to.pdf Graphic file (type pdf)
+<use nrmseARMAPrices-eps-converted-to.pdf>
+Package pdftex.def Info: nrmseARMAPrices-eps-converted-to.pdf  used on input li
+ne 129.
+(pdftex.def)             Requested size: 195.0pt x 146.25082pt.
+
+Overfull \hbox (2.61049pt too wide) in paragraph at lines 125--131
+[]$[]$ $[]$ 
+ []
+
+Package epstopdf Info: Source file: <nrmseDemand.eps>
+(epstopdf)                    date: 2020-02-10 17:18:59
+(epstopdf)                    size: 16908 bytes
+(epstopdf)             Output file: <nrmseDemand-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-02-10 17:21:05
+(epstopdf)                    size: 10173 bytes
+(epstopdf)             Command: <epstopdf --outfile=nrmseDemand-eps-converted-t
+o.pdf nrmseDemand.eps>
+(epstopdf)             \includegraphics on input line 140.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex (file ./nrmseDemand-eps-converted-to.pdf): PDF inclusi
+on: found PDF version <1.7>, but at most version <1.5> allowed
+<nrmseDemand-eps-converted-to.pdf, id=151, 421.575pt x 316.18124pt>
+File: nrmseDemand-eps-converted-to.pdf Graphic file (type pdf)
+<use nrmseDemand-eps-converted-to.pdf>
+Package pdftex.def Info: nrmseDemand-eps-converted-to.pdf  used on input line 1
+40.
+(pdftex.def)             Requested size: 195.0pt x 146.25082pt.
+Package epstopdf Info: Source file: <nrmsePrices.eps>
+(epstopdf)                    date: 2020-02-10 17:20:46
+(epstopdf)                    size: 18221 bytes
+(epstopdf)             Output file: <nrmsePrices-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-02-10 17:21:06
+(epstopdf)                    size: 10058 bytes
+(epstopdf)             Command: <epstopdf --outfile=nrmsePrices-eps-converted-t
+o.pdf nrmsePrices.eps>
+(epstopdf)             \includegraphics on input line 143.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex (file ./nrmsePrices-eps-converted-to.pdf): PDF inclusi
+on: found PDF version <1.7>, but at most version <1.5> allowed
+<nrmsePrices-eps-converted-to.pdf, id=152, 421.575pt x 316.18124pt>
+File: nrmsePrices-eps-converted-to.pdf Graphic file (type pdf)
+<use nrmsePrices-eps-converted-to.pdf>
+Package pdftex.def Info: nrmsePrices-eps-converted-to.pdf  used on input line 1
+43.
+(pdftex.def)             Requested size: 195.0pt x 146.25082pt.
+
+Overfull \hbox (2.61049pt too wide) in paragraph at lines 139--145
+[]$[]$ $[]$ 
+ []
+
+[4 <./nrmseARMADemand-eps-converted-to.pdf> <./nrmseARMAPrices-eps-converted-to
+.pdf> <./nrmseDemand-eps-converted-to.pdf> <./nrmsePrices-eps-converted-to.pdf>
+] [5] (AnaforaXronoseirwn.aux) ) 
+Here is how much of TeX's memory you used:
+ 6917 strings out of 492902
+ 111445 string characters out of 3123340
+ 177547 words of memory out of 3000000
+ 10709 multiletter control sequences out of 15000+200000
+ 15803 words of font info for 45 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 42i,7n,40p,970b,542s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/Charis/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Charis/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Charis/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Us
+ers/Charis/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cbgreek/grmn120
+0.pfb><C:/Users/Charis/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cbg
+reek/grmn1440.pfb><C:/Users/Charis/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/cbgreek/grmn2074.pfb><C:/Users/Charis/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/cbgreek/grxn1440.pfb><C:/Users/Charis/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/cbgreek/grxn1728.pfb><C:/Users/Charis/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/cbgreek/grxn2074.pfb>
+Output written on AnaforaXronoseirwn.pdf (6 pages, 296481 bytes).
+PDF statistics:
+ 219 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+
