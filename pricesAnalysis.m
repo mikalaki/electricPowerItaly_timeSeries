@@ -207,9 +207,18 @@ histogram(LinearAutoCorrelations(1,2:(nOfnewSamples+1)));
 hold on;
 line([LinearAutoCorrelations(1,1) LinearAutoCorrelations(1,1)], [0 9],'Color','red','linewidth',1.5);
 title("Autocorrealtion histogram of new samples and of the original(red) (price analysis");
+ylabel("frequency");
+xlabel("value");
 
 figure(14)
 histogram(SamplesMutualInfo(1,2:(nOfnewSamples+1)));
 hold on;
 line([SamplesMutualInfo(1,1) SamplesMutualInfo(1,1)], [0 9],'Color','red','linewidth',1.5);
 title("Mutual information histogram of  new samples and of the original(red) (price analysis)");
+ylabel("frequency");
+xlabel("value");
+
+%getting correlation dimension
+
+
+%getting lyaponov 
