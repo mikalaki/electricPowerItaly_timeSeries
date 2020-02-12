@@ -228,7 +228,7 @@ for i=1:(nOfnewSamples+1)
     SamplesCorrDimension(:,i) = nuM(m,4);
 end
 
-%Histogram for embedding dimension m=4 and lag τ=4
+%Histogram for correlation dimension, with embedding dimension m=4 and lag τ=4
 figure()
 histogram(SamplesCorrDimension(1,2:(nOfnewSamples+1)),bins);
 hold on;
