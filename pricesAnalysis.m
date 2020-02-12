@@ -153,7 +153,7 @@ end
 
 %Linear autocorrelation
 %maxtau1 for the autocorrelation and mutual information
-maxtau1=3;
+maxtau1=6;
 LinearAutoCorrelations=zeros(maxtau1,nOfnewSamples+1);
 
 %computing autocorrelation for all the new samples
@@ -172,7 +172,7 @@ for i=1:maxtau1
 end
 plot([0 nOfnewSamples+1],autlim*[1 1],'--c','linewidth',1.5)
 plot([0 nOfnewSamples+1],-autlim*[1 1],'--c','linewidth',1.5)
-legend("\tau=1","\tau=2","\tau=3")
+legend("\tau=1","\tau=2","\tau=3","\tau=4","\tau=5","\tau=6")
 title('Linear autocorrelation for the 21 samples.(price analysis)')
 ylabel("autocorrelation")
 xlabel("sample Number (n=0 belongs to the residuals)");
@@ -191,11 +191,11 @@ clf;
 %plotting the mutual information function
 figure(12)
 for i=1:maxtau1
-    plot([0:nOfnewSamples] , SamplesMutualInfo(i,:),'-o');
+    plot([0:nOfnewSamples] , SamplesMutualInfo(i,:),'o');
     hold on
 end
 
-legend("\tau=1","\tau=2","\tau=3")
+legend("\tau=1","\tau=2","\tau=3","\tau=4","\tau=5","\tau=6")
 title('Mutual information for the 21 samples.')
 ylabel("mutual information")
 xlabel("sample Number (0 belongs to the original residuals)");
@@ -206,19 +206,39 @@ figure(13)
 histogram(LinearAutoCorrelations(1,2:(nOfnewSamples+1)));
 hold on;
 line([LinearAutoCorrelations(1,1) LinearAutoCorrelations(1,1)], [0 9],'Color','red','linewidth',1.5);
-title("Autocorrealtion histogram of new samples and of the original(red) (price analysis");
+title("AC histogram of new samples and original residues (red) (price)");
 ylabel("frequency");
-xlabel("value");
+xlabel("Autocorrealtion value");
 
 figure(14)
 histogram(SamplesMutualInfo(1,2:(nOfnewSamples+1)));
 hold on;
 line([SamplesMutualInfo(1,1) SamplesMutualInfo(1,1)], [0 9],'Color','red','linewidth',1.5);
-title("Mutual information histogram of  new samples and of the original(red) (price analysis)");
+title("MI histogram of new samples and original residues(red) (price)");
 ylabel("frequency");
-xlabel("value");
+xlabel("Mutual Information value");
 
 %getting correlation dimension
+SamplesCorrDimension=zeros(1,nOfnewSamples+1);
 
+%correlation dimension for the residuals
+ [~,~,~,~,~] = correlationdimension(residuals,1,10,"Prices Correlation Distance",0.2,1.1,1.7);
+    
+% %correlation dimension for the 20 samples
+% for i=1:(nOfnewSamples+1)
+% %     mut=mutualinformation(iidtimeSeries(:,i), maxtau1)
+% %     SamplesMutualInfo(:,i)=mut(2:(maxtau1+1),2);
+%     [rcM,cM,rdM,dM,nuM] = correlationdimension(iidtimeSeries(:,i),1,10,"Correlation Distance",0,-1.5,1.5);
+% end
 
-%getting lyaponov 
+% % %Mutual information for the 21 samples
+% % SamplesMutualInfo=zeros(maxtau1,nOfnewSamples+1);
+% % figure()
+% % %correlation dimension for all the new samples
+% for i=1:(nOfnewSamples+1)
+% %     mut=mutualinformation(iidtimeSeries(:,i), maxtau1)
+% %     SamplesMutualInfo(:,i)=mut(2:(maxtau1+1),2);
+%     [rcM,cM,rdM,dM,nuM] = correlationdimension(iidtimeSeries(:,i),1,10,"Correlation Distance",0,-1.5,1.5);
+% end
+% % clf;
+% %getting lyaponov 

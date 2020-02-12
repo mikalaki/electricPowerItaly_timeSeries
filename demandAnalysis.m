@@ -143,7 +143,7 @@ end
 
 %Linear autocorrelation
 %maxtau1 for the autocorrelation and mutual information
-maxtau1=3;
+maxtau1=6;
 LinearAutoCorrelations=zeros(maxtau1,nOfnewSamples+1);
 
 %computing autocorrelation for all the new samples
@@ -185,7 +185,7 @@ for i=1:maxtau1
     hold on
 end
 
-legend("\tau=1","\tau=2","\tau=3")
+legend("\tau=1","\tau=2","\tau=3","\tau=4","\tau=5","\tau=6")
 title('Mutual information for the 21 samples.(demand analysis)')
 ylabel("mutual information")
 xlabel("Sample number (0 belongs to the original residuals) ");
@@ -208,6 +208,12 @@ line([SamplesMutualInfo(1,1) SamplesMutualInfo(1,1)], [0 9],'Color','red','linew
 title("Mutual information histogram of  new samples and of the original(red) (demand analysis)");
 ylabel("frequency");
 xlabel("value");
+%getting correlation dimension
+SamplesCorrDimension=zeros(1,nOfnewSamples+1);
 
-%Correlation Distance
+%correlation dimension for the residuals
+ [~,~,~,~,~] = correlationdimension(residuals,1,10,"Demand Correlation Distance",1,3,4);
+    
+%correlation dimension for the 20 samples
+
 
