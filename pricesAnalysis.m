@@ -5,7 +5,7 @@ close all; clear; clc;
 % import data
 load('pricesData.mat');
 
-% %get the data code
+% %getting the time series (START)
 % teamNumber=7;
 % 
 % %computing the time and the regionNumber ,we have to examine.
@@ -17,7 +17,7 @@ load('pricesData.mat');
 % 
 % %getting the timeserie we want to examine 
 % prices=italyPowerData(italyPowerData(:,4)==8,5);
-% %
+%  %getting the time series (END)
 
 
 %constants
@@ -153,17 +153,17 @@ for i=1:nOfnewSamples
 end
 
 %Linear autocorrelation
-%maxtau1 for the autocorrelation and mutual information
-maxtau1=3;
+%maxtau1 for the autocorrelation and mutual information plot
+maxtau1=4;
 LinearAutoCorrelations=zeros(maxtau1,nOfnewSamples+1);
 
-%computing autocorrelation for all the new samples
+%computing autocorrelation for all the new samples and original residues
 figure()
 for i=1:(nOfnewSamples+1) 
     autoCorr=autocorrelation(resSamples(:,i), maxtau1)
     LinearAutoCorrelations(:,i)=autoCorr(2:(maxtau1+1),2);
 end
-clf;
+
 
 %plotting the autocorrelation function
 figure()
@@ -173,16 +173,16 @@ for i=1:maxtau1
 end
 plot([0 nOfnewSamples+1],autlim*[1 1],'--c','linewidth',1.5)
 plot([0 nOfnewSamples+1],-autlim*[1 1],'--c','linewidth',1.5)
-legend("\tau=1","\tau=2","\tau=3")
+legend("\tau=1","\tau=2","\tau=3","\tau=4")
 title('Linear autocorrelation for the 21 samples.(price)')
 ylabel("autocorrelation")
-xlabel("sample Number (n=0 belongs to the residuals)");
-clf;
+xlabel("Sample number (0 belongs to the original residuals, 1-20 to permutations)");
 
-%Mutual information for the 21 samples
+
+%Mutual information for the 21 samples(original +permutations)
 SamplesMutualInfo=zeros(maxtau1,nOfnewSamples+1);
-figure()
 
+figure()
 %computing mutual information for all the new samples
 for i=1:(nOfnewSamples+1)
     mut=mutualinformation(resSamples(:,i), maxtau1)
@@ -193,14 +193,14 @@ end
 %plotting the mutual information function
 figure()
 for i=1:maxtau1
-    plot([0:nOfnewSamples] , SamplesMutualInfo(i,:),'o');
+    plot([0:nOfnewSamples] , SamplesMutualInfo(i,:),'-o');
     hold on
 end
 
-legend("\tau=1","\tau=2","\tau=3","\tau=4","\tau=5","\tau=6")
+legend("\tau=1","\tau=2","\tau=3","\tau=4")
 title('Mutual information for the 21 samples. (price)')
 ylabel("mutual information")
-xlabel("sample Number (0 belongs to the original residuals)");
+xlabel("Sample number (0 belongs to the original residuals, 1-20 to permutations)");
 
 %Histogram for lat(tau) =1 for autocorrelation 
 figure()
@@ -220,24 +220,33 @@ title("MI histogram of new samples and original residues(red) (price)");
 ylabel("frequency");
 xlabel("Mutual Information value");
 
+%lag
+tau=3;
+
+%FNN
+figure();
+fnn = falsenearest(residuals,tau,10,10,0,'Price Residuals');
+
 %getting correlation dimension
 SamplesCorrDimension=zeros(1,nOfnewSamples+1);
 
+%embedding dimensions
+m=4;
+
 %correlation dimension for the residuals
 figure();
-[~,~,~,~,~] = correlationdimension(residuals,4,10,"Prices Correlation Distance");
+[~,~,~,~,~] = correlationdimension(residuals,tau,10,"Prices residuals");
  
  %%with log(r1), logf(r2) and fac fixed on the series.
+ %figure();
  %[~,~,~,~,~] = correlationdimension(residuals,1,10,"Prices residuals",0.2,1.1,1.7);
 
 %correlation dimension for the 20 samples ,we get embeding distance m=4
 
-%embedding dimensions
-m=4;
-tau=4;
+
 
 for i=1:(nOfnewSamples+1)
-    [~,~,~,~,nuM] = correlationdimension_no_plot(resSamples(:,i),4,10,"Prices residuals");
+    [~,~,~,~,nuM] = correlationdimension_no_plot(resSamples(:,i),tau,10,"Prices residuals");
     SamplesCorrDimension(:,i) = nuM(m,4);
 end
 
@@ -250,10 +259,5 @@ title("CD histogram of new samples and original residues(red) (price)");
 ylabel("frequency");
 xlabel("Correlation Dimension value");
 
-% %getting lyaponov for residuals
-% figure();
-% [l1V,sdl1V] = maxlyapunov(residuals,tau,2,10)
 
-%FNN
-figure();
-fnn = falsenearest(residuals,4,10,10,0,'Price Residuals');
+

@@ -5,7 +5,7 @@ close all; clear; clc;
 % import data
 load('demandData.mat');
 
-% %mikalaki code
+% %getting the time series (START)
 % teamNumber=7;
 % 
 % %computing the time and the regionNumber ,we have to examine.
@@ -16,10 +16,10 @@ load('demandData.mat');
 % italyPowerData=xlsread('ElectricPowerItaly.xls','demand');
 % 
 % %getting the timeserie we want to examine 
-% demand1=italyPowerData(italyPowerData(:,4)==8,5);
+% demand=italyPowerData(italyPowerData(:,4)==8,5);
 % 
 % 
-% %mikalaki end
+% %%getting the time series (END)
 
 
 %constants
@@ -143,17 +143,17 @@ for i=1:nOfnewSamples
 end
 
 %Linear autocorrelation
-%maxtau1 for the autocorrelation and mutual information
-maxtau1=3;
+%maxtau1 for the autocorrelation and mutual information plot
+maxtau1=4;
 LinearAutoCorrelations=zeros(maxtau1,nOfnewSamples+1);
 
-%computing autocorrelation for all the new samples
+%computing autocorrelation for all the new samples and original residues
 figure()
 for i=1:(nOfnewSamples+1) 
     autoCorr=autocorrelation(resSamples(:,i), maxtau1)
     LinearAutoCorrelations(:,i)=autoCorr(2:(maxtau1+1),2);
 end
-clf;
+
 
 %plotting the autocorrelation function
 figure()
@@ -163,21 +163,22 @@ for i=1:maxtau1
 end
 plot([0 nOfnewSamples+1],autlim*[1 1],'--c','linewidth',1.5)
 plot([0 nOfnewSamples+1],-autlim*[1 1],'--c','linewidth',1.5)
-legend("\tau=1","\tau=2","\tau=3")
+legend("\tau=1","\tau=2","\tau=3","\tau=4")
 title('Linear autocorrelation of the 21 samples. (demand)')
 ylabel("autocorrelation")
-xlabel("Sample number (0 belongs to the residuals)");
+xlabel("Sample number (0 belongs to the original residuals, 1-20 to permutations)");
 
 
-%Mutual information
+%Mutual information for the 21 samples(original +permutations)
 SamplesMutualInfo=zeros(maxtau1,nOfnewSamples+1);
+
 figure()
 %computing mutual information for all the new samples
 for i=1:(nOfnewSamples+1)
     mut=mutualinformation(resSamples(:,i), maxtau1)
     SamplesMutualInfo(:,i)=mut(2:(maxtau1+1),2);
 end
-clf;
+
 
 %plotting the mutual information function
 figure()
@@ -186,15 +187,15 @@ for i=1:maxtau1
     hold on
 end
 
-legend("\tau=1","\tau=2","\tau=3","\tau=4","\tau=5","\tau=6")
+legend("\tau=1","\tau=2","\tau=3","\tau=4")
 title('Mutual information for the 21 samples.(demand)')
 ylabel("mutual information")
-xlabel("Sample number (0 belongs to the original residuals)");
+xlabel("Sample number (0 belongs to the original residuals, 1-20 to permutations)");
 
 %Histogram for lat(tau) =1 for autocorrelation and mutual information
 % bins=10;
 figure()
-histogram(LinearAutoCorrelations(1,2:(nOfnewSamples+1)));
+histogram(LinearAutoCorrelations(1,2:(nOfnewSamples+1)),bins);
 hold on;
 line([LinearAutoCorrelations(1,1) LinearAutoCorrelations(1,1)], [0 9],'Color','red','linewidth',1.5);
 title("AC histogram of new samples and of the original(red) (demand)");
@@ -209,26 +210,39 @@ line([SamplesMutualInfo(1,1) SamplesMutualInfo(1,1)], [0 9],'Color','red','linew
 title("MI histogram of  new samples and of the original(red) (demand)");
 ylabel("frequency");
 xlabel("Mutual information value");
+
+%lag
+tau=1;
+
+%FNN
+figure();
+fnn = falsenearest(residuals,tau,10,10,0,'Demand Residuals');
+
 %getting correlation dimension
 SamplesCorrDimension=zeros(1,nOfnewSamples+1);
-
-%correlation dimension for the residuals
- [~,~,~,~,~] = correlationdimension(residuals,1,10,"Demand residuals");
-%  %with log(r1), logf(r2) and fac fixed on the series.
-%  [~,~,~,~,~] = correlationdimension(residuals,1,10,"Demand Correlation Distance",1,3,4);   
-
-
-%correlation dimension for the 20 samples ,we choose embeding distance m=5
 
 %embedding dimensions
 m=6;
 
+
+%getting correlation dimension
+SamplesCorrDimension=zeros(1,nOfnewSamples+1);
+
+%correlation dimension for the residuals
+ figure();
+ [~,~,~,~,~] = correlationdimension(residuals,tau,10,"Demand residuals");
+%  %with log(r1), logf(r2) and fac fixed on the series.
+%  figure();
+%  [~,~,~,~,~] = correlationdimension(residuals,1,10,"Demand Correlation Distance",1,3,4);   
+
+
+%correlation dimension for the 20 samples 
 for i=1:(nOfnewSamples+1)
-    [~,~,~,~,nuM] = correlationdimension_no_plot(resSamples(:,i),1,10,"Demand residuals");
+    [~,~,~,~,nuM] = correlationdimension_no_plot(resSamples(:,i),tau,10,"Demand residuals");
     SamplesCorrDimension(:,i) = nuM(m,4);
 end
 
-%Histogram for correlation dimension, with embedding dimension m=4 and lag τ=4
+%Histogram for correlation dimension, with embedding dimension m=6 and lag τ=1
 figure()
 histogram(SamplesCorrDimension(1,2:(nOfnewSamples+1)),bins);
 hold on;
@@ -237,5 +251,5 @@ title("CD histogram of new samples and original residues(red) (demand)");
 ylabel("frequency");
 xlabel("Correlation Dimension value");
 
-% %getting lyaponov 
-% fnn = falsenearest(residuals,1,10,10,0,'Price Residuals');
+
+
