@@ -61,7 +61,6 @@ title('Deseasoned demand time series')
 
 %% LINEAR 2
 % Autocorrelation of deseasoned time series using average seasonal component
-figure()
 ac1 = autocorrelation(deseasoned(~isnan(deseasoned)), maxtau);
 autlim = zalpha/sqrt(n);
 figure()
@@ -148,7 +147,6 @@ maxtau1=4;
 LinearAutoCorrelations=zeros(maxtau1,nOfnewSamples+1);
 
 %computing autocorrelation for all the new samples and original residues
-figure()
 for i=1:(nOfnewSamples+1) 
     autoCorr=autocorrelation(resSamples(:,i), maxtau1)
     LinearAutoCorrelations(:,i)=autoCorr(2:(maxtau1+1),2);
@@ -204,7 +202,7 @@ xlabel("Autocorrelation value");
 
 
 figure()
-histogram(SamplesMutualInfo(1,2:(nOfnewSamples+1)));
+histogram(SamplesMutualInfo(1,2:(nOfnewSamples+1)),bins);
 hold on;
 line([SamplesMutualInfo(1,1) SamplesMutualInfo(1,1)], [0 9],'Color','red','linewidth',1.5);
 title("MI histogram of  new samples and of the original(red) (demand)");

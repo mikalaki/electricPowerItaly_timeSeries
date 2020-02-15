@@ -56,7 +56,6 @@ title('Deseasoned prices time series')
 
 %%  LINEAR 2
 %2. Autocorrelation of deseasoned time series 
-figure()
 ac1 = autocorrelation(deseasoned(~isnan(deseasoned)), maxtau);
 autlim = zalpha/sqrt(n);
 figure()
@@ -158,7 +157,6 @@ maxtau1=4;
 LinearAutoCorrelations=zeros(maxtau1,nOfnewSamples+1);
 
 %computing autocorrelation for all the new samples and original residues
-figure()
 for i=1:(nOfnewSamples+1) 
     autoCorr=autocorrelation(resSamples(:,i), maxtau1)
     LinearAutoCorrelations(:,i)=autoCorr(2:(maxtau1+1),2);
@@ -252,7 +250,7 @@ end
 
 %Histogram for correlation dimension, with embedding dimension m=4 and lag τ=4
 figure()
-histogram(SamplesCorrDimension(1,2:(nOfnewSamples+1)));
+histogram(SamplesCorrDimension(1,2:(nOfnewSamples+1)),bins);
 hold on;
 line([SamplesCorrDimension(1,1) SamplesCorrDimension(1,1)], [0 9],'Color','red','linewidth',1.5);
 title("CD histogram of new samples and original residues(red) (price)");
